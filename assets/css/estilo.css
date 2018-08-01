@@ -1,55 +1,100 @@
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-  font-size: 15px;
-  min-height: 100%;
-  padding-top: 80px;
-  position:relative;
+    font-family: "Barlow, sans-serif, sans-serif;"
+    font-size: 15px;
+    min-height: 100%;
+    padding-top: 80px;
+    position:relative;
+}
+
+h1 {
+    color: #5c0091;
 }
 
 a {
-  color:#dd4814;
+    color:#dd4814;
 }
 
-#cabecalho-unici {
-  background-color: #dd4814;
-  height: 80px;
-  margin: 0;
-  padding-bottom: 15px;
-  padding-top: 15px;
-  position:fixed;
-  width: 100%;
+#cabecalho-padrao {
+    background-color: #fff;
+    height: 100px;
+    margin: 0;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    position: fixed;
+    width: 100%;
 }
 
-#cabecalho-unici img{
-  max-height: 50px;
+#cabecalho-padrao img {
+    max-height: 50px;
 }
 
-#cabecalho-unici a{
-  color:#ffffff;
-  display:inline;
-  float: right;
-  font-size: 18px;
-  font-style: italic;
-  margin-top: 10px;
+#cabecalho-padrao a {
+    color: #ffffff;
+    display: inline;
+    float: right;
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 10px;
 }
 
 .container {
-  width: auto;
-  max-width: 1170px;
-  padding: 0 15px;
+    width: auto;
+    max-width: 1170px;
+    padding: 0 15px;
 }
 
-.container .tutorial-link {
-  font-size: 18px;
-  margin: 20px 0;
+.btn-padrao-grande {
+    color: #fff;
+    background-color: #999;
+    border-color: #999;
+    width: 500px;
+    margin-bottom: 20px;
+    border-radius: 10px 10px 10px 10px;
 }
 
-.container .tutorial-link a{
-  color:#dd4814;
-  font-size: 15px;
+.btn-padrao-grande:hover {
+    color: #fff;
+    background-color: #5c0091;
 }
+
+
+
+
+
+@media screen and (max-width: 800px) {
+    .left, .main, .right {
+        width: 100%;
+    }
+
+    .btn-padrao-grande {
+        width: 350px;
+    }
+
+    .form-padrao {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+
+
+
+@media screen and (max-width: 400px) {
+    .left, .main, .right {
+        width: 100%;
+    }
+
+    .btn-padrao-grande {
+        width: 230px;
+        float: center;
+    }
+}
+
+

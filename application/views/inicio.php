@@ -7,13 +7,13 @@
 
     <div class="col-md-12">
         <a href="<?=base_url('abrirProduto')?>">
-            <input value="Produtos" type="button" class="btn btn-primary"></input>
+            <input value="Produtos" type="button" class="btn btn-padrao-grande"></input>
         </a>
     </div>
 
     <div class="col-md-12">
         <a href="<?=base_url('abrirProdutoCategoria')?>">
-            <input value="Categorias de Produtos" type="button" class="btn btn-primary"></input>
+            <input value="Categorias de Produtos" type="button" class="btn btn-padrao-grande"></input>
         </a>
     </div>
 </div>
