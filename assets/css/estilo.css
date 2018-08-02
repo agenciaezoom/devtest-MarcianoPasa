@@ -19,6 +19,12 @@ a {
     color:#dd4814;
 }
 
+.page-header-normal {
+  padding-bottom: 9px;
+  margin: 40px 0 10px;
+  /*border-bottom: 1px solid #eee;*/
+}
+
 #cabecalho-padrao {
     background-color: #fff;
     height: 100px;
@@ -27,10 +33,21 @@ a {
     padding-top: 15px;
     position: fixed;
     width: 100%;
+
+    background: -webkit-linear-gradient(left, #fff, #5c0091); /* da esquerda à direita */
+    background: -o-linear-gradient(right, #fff, #5c0091); /* terminando à direita */
+    background: -moz-linear-gradient(right, #fff, #5c0091); /* terminando à direita */
+    background: linear-gradient(to right, #fff, #5c0091); /* indo para a direita */
+
+    /*background: -webkit-linear-gradient(left, #5c0091, #);
+    background: -o-linear-gradient(right, #5c0091, #fff);
+    background: -moz-linear-gradient(right, #5c0091, #fff);
+    background: linear-gradient(to right, #5c0091, #fff);*/
 }
 
 #cabecalho-padrao img {
-    max-height: 50px;
+    max-height: 75px;
+    margin-top: -12px;
 }
 
 #cabecalho-padrao a {
@@ -62,6 +79,76 @@ a {
     background-color: #5c0091;
 }
 
+.btn-padrao {
+    color: #fff;
+    background-color: #999;
+    border-color: #999;
+    width: 200px;
+    margin-bottom: 30px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.btn-padrao:hover {
+    color: #fff;
+    background-color: #5c0091;
+}
+
+.btn-editar {
+    color: #fff;
+    background-color: #999;
+    border-color: #999;
+    width: 45%;
+    border-radius: 10px 10px 10px 10px;
+    border-style: solid;
+}
+
+.btn-editar:hover {
+    color: #fff;
+    background-color: blue;
+    border-color: blue;
+}
+
+.btn-excluir {
+    color: #fff;
+    background-color: #999;
+    border-color: #999;
+    width: 45%;
+    border-radius: 10px 10px 10px 10px;
+    border-style: solid;
+}
+
+.btn-excluir:hover {
+    color: #fff;
+    background-color: red;
+    border-color: red;
+}
+
+.btn-cancelar {
+    color: #fff;
+    background-color: #999;
+    border-color: #999;
+    width: 200px;
+    margin-bottom: 30px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.btn-cancelar:hover {
+    color: #fff;
+    background-color: red;
+}
+
+.titulo-cabecalho {
+    float: right;
+    margin-right: 35px;
+    margin-top: 10px;
+    font: #fff;
+}
+
+.titulo-cabecalho h1 {
+    font-size: 35px;
+    color: #fff;
+    font-weight: bold;
+}
 
 
 
@@ -81,6 +168,15 @@ a {
         justify-content: center;
         flex-direction: column;
     }
+
+    .btn-editar {
+        width: 100px;
+        margin-bottom: 5px;
+    }
+
+    .btn-excluir {
+        width: 100px;
+    }
 }
 
 
@@ -95,6 +191,17 @@ a {
         width: 230px;
         float: center;
     }
+
+    .btn-editar {
+        width: 60px;
+        margin-bottom: 5px;
+    }
+
+    .btn-excluir {
+        width: 60px;
+    }
+
+    .titulo-cabecalho h1 {
+        font-size: 20px;
+    }
 }
-
-

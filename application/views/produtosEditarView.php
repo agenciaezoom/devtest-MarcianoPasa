@@ -1,7 +1,7 @@
 <?php $this->load->view('commons/cabecalho'); ?>
 
 <div class="container">
-	<div class="page-header">
+	<div class="page-header-normal">
 		<h1>Edição de Produto</h1>
 	</div>
 
@@ -14,17 +14,17 @@
 
 	<form method="post" action="<?=base_url('atualizarProduto')?>" enctype="multipart/form-data">
 
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<div class="form-group">
 				<label>Nome:</label>
 				<input type="text" name="nome" class="form-control" value="<?=$produto['nome']?>" required/>
 			</div>
 		</div>
 
-		<div class="col-md-12">
+		<div class="col-md-6">
 			<div class="form-group">
 				<label>Categoria do Produto:</label>
-				<select id="categoria_id" name="categoria_id" class="form-control" style="width:500px;">
+				<select id="categoria_id" name="categoria_id" class="form-control">
 					<option value=""> Selecione </option>
 					<?php foreach ($categorias as $row): ?>
 						<?php if ($produto['categoria_id'] == $row['id']) { ?>
@@ -37,10 +37,11 @@
 			</div>
 		</div>
 
-		<div class="col-md-4">
-			<div class="clearfix"></div>
+		<div class="col-md-12">
 			<input type="hidden" name="id" value="<?=$produto['id']?>"/>
-			<input type="submit" value="Salvar" class="btn btn-success" />
+			<input type="submit" value="Salvar" class="btn btn-padrao" />
+
+			<input onclick="history.go(-1);" value="Cancelar" class="btn btn-cancelar" />
 		</div>
 	</form>
 

@@ -30,14 +30,14 @@ class Produtos_Categorias_Controller extends CI_Controller {
 			$this->session->set_flashdata('error', validation_errors('<p>','</p>'));
 		}
 
-		$this->Index();
+		redirect(base_url('abrirProdutoCategoria'));
 	}
 
 	public function EditarProdutoCategoria() {
 		$id = $this->uri->segment(2);
 
 		if (is_null($id)) {
-			$this->Index();
+			redirect(base_url('abrirProdutoCategoria'));
 		}
 
 		$dados['produtos_categorias'] = $this->produtos_categorias_model->GetById($id);
@@ -65,26 +65,38 @@ class Produtos_Categorias_Controller extends CI_Controller {
 			$this->session->set_flashdata('error', validation_errors());
 		}
 
-		$this->Index();
+		redirect(base_url('abrirProdutoCategoria'));
 	}
 
 	public function ExcluirProdutoCategoria() {
 		$id = $this->uri->segment(2);
 
 		if (is_null($id)) {
+			redirect(base_url('abrirProdutoCategoria'));
+		}
+
+		$categoiraUsada = $this->produtos_model->GetByField('categoria_id', $id);
+
+		if (($categoiraUsada != null) && (count($categoiraUsada) > 0)) {
+			$this->session->set_flashdata(
+				'error',
+				'<p>Não é possível excluir esta categoria pois ela esta sendo utilizada em outra parte do sistema.</p>'
+			);
+
 			$this->Index();
 		}
-
-		$status = $this->produtos_categorias_model->Excluir($id);
-
-		if ($status) {
-			$this->session->set_flashdata('success', '<p>Produto excluído com sucesso.</p>');
-		}
 		else {
-			$this->session->set_flashdata('error', '<p>Não foi possível excluir o produto.</p>');
-		}
+			$status = $this->produtos_categorias_model->Excluir($id);
 
-		$this->Index();
+			if ($status) {
+				$this->session->set_flashdata('success', '<p>Categoria excluída com sucesso.</p>');
+			}
+			else {
+				$this->session->set_flashdata('error', '<p>Não foi possível excluir a categoria.</p>');
+			}
+
+			$this->Index();
+		}
 	}
 
 	private function Validar($operacao = 'insert') {

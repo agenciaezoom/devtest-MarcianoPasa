@@ -5,7 +5,7 @@ $route['default_controller'] = 'Inicio_Controller';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['abrirProduto'] = "Produtos_Controller/Index";
+$route['abrirProdutos'] = "Produtos_Controller/Index";
 $route['salvarProduto'] = "Produtos_Controller/SalvarProduto";
 $route['editarProduto/(:num)'] = "Produtos_Controller/EditarProduto/$1";
 $route['atualizarProduto'] = "Produtos_Controller/AtualizarProduto";

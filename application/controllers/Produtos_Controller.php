@@ -39,14 +39,14 @@ class Produtos_Controller extends CI_Controller {
 			$this->session->set_flashdata('error', validation_errors('<p>','</p>'));
 		}
 
-		$this->Index();
+		redirect(base_url('abrirProdutos'));
 	}
 
 	public function EditarProduto() {
 		$id = $this->uri->segment(2);
 
 		if (is_null($id)) {
-			$this->Index();
+			redirect(base_url('abrirProdutos'));
 		}
 
 		$dados['produto'] = $this->produtos_model->GetById($id);
@@ -80,14 +80,14 @@ class Produtos_Controller extends CI_Controller {
 			$this->session->set_flashdata('error', validation_errors());
 		}
 
-		$this->Index();
+		redirect(base_url('abrirProdutos'));
 	}
 
 	public function ExcluirProduto(){
 		$id = $this->uri->segment(2);
 
 		if (is_null($id)) {
-			$this->Index();
+			redirect(base_url('abrirProdutos'));
 		}
 
 		$status = $this->produtos_model->Excluir($id);
@@ -99,7 +99,7 @@ class Produtos_Controller extends CI_Controller {
 			$this->session->set_flashdata('error', '<p>Não foi possível excluir o produto.</p>');
 		}
 
-		$this->Index();
+		redirect(base_url('abrirProdutos'));
 	}
 
 	private function Validar($operacao = 'insert'){
