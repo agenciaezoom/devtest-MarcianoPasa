@@ -73,12 +73,3 @@
 </div>
 
 <?php $this->load->view('commons/rodape'); ?>
-
-<script>
-   function onFormSubmission(e){
-       return confirm("do you want to delete Y/N");
-   }
-
-   var frm = document.getElementById('frm');
-   frm.addEventListener("submit", onFormSubmission);
-</script>
